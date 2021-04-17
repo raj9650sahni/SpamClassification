@@ -37,9 +37,9 @@ def classify():
     clf.fit(X_train, y_train)
     clf.score(X_test, y_test)
     # Alternative Usage of Saved Model
-    joblib.dump(clf, 'NB_spam_model.pkl')
-    NB_spam_model = open('NB_spam_model.pkl','rb')
-    clf = joblib.load(NB_spam_model)
+    #joblib.dump(clf, 'NB_spam_model.pkl')
+    #NB_spam_model = open('NB_spam_model.pkl','rb')
+    #clf = joblib.load(NB_spam_model)
 
     if request.method == 'GET':
         message = request.args['msg']
