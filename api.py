@@ -3,7 +3,6 @@ import flask
 import random
 from flask import request, jsonify
 import pandas as pd
-import numpy as np
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -13,7 +12,7 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def home():
     return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
 
@@ -42,7 +41,7 @@ def classify():
     #NB_spam_model = open('NB_spam_model.pkl','rb')
     #clf = joblib.load(NB_spam_model)
 
-    if request.method == 'POST':
+    if request.method == 'GET':
         message = request.args['msg']
         data = [message]
         vect = cv.transform(data).toarray()
