@@ -13,7 +13,7 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def home():
     return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
 
@@ -42,7 +42,7 @@ def classify():
     #NB_spam_model = open('NB_spam_model.pkl','rb')
     #clf = joblib.load(NB_spam_model)
 
-    if request.method == 'GET':
+    if request.method == 'POST':
         message = request.args['msg']
         data = [message]
         vect = cv.transform(data).toarray()
