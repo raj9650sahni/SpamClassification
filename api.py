@@ -3,9 +3,11 @@ import flask
 import random
 from flask import request, jsonify
 import pandas as pd
+import numpy as np
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
+import sklearn.externals
 import joblib
 
 app = flask.Flask(__name__)
