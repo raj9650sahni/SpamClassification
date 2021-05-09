@@ -3,7 +3,6 @@ import flask
 import random
 from flask import request, jsonify
 import pandas as pd
-from numpy.distutils.core import Extension
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -37,10 +36,10 @@ def classify():
     clf = MultinomialNB()
     clf.fit(X_train, y_train)
     clf.score(X_test, y_test)
-    # Alternative Usage of Saved Model
-    #joblib.dump(clf, 'NB_spam_model.pkl')
-    #NB_spam_model = open('NB_spam_model.pkl','rb')
-    #clf = joblib.load(NB_spam_model)
+    Alternative Usage of Saved Model
+    joblib.dump(clf, 'NB_spam_model.pkl')
+    NB_spam_model = open('NB_spam_model.pkl','rb')
+    clf = joblib.load(NB_spam_model)
 
     if request.method == 'GET':
         message = request.args['msg']
@@ -50,8 +49,5 @@ def classify():
     return jsonify({'spam': int(my_prediction[0])})
 
 
-if __name__ == '__main__':
-    from numpy.distutils.core import setup
-                           
-                          
+if __name__ == '__main__':           
     app.run()
