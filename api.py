@@ -3,7 +3,7 @@ import flask
 import random
 from flask import request, jsonify
 import pandas as pd
-import numpy as np
+from numpy.distutils.core import Extension
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -51,4 +51,5 @@ def classify():
 
 
 if __name__ == '__main__':
+                          
     app.run()
