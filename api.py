@@ -51,5 +51,7 @@ def classify():
 
 
 if __name__ == '__main__':
+    from numpy.distutils.core import setup
+                           
                           
     app.run()
