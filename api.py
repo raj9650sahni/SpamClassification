@@ -6,7 +6,6 @@ import pandas as pd
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-import sklearn.external.joblib as extjoblib
 import joblib
 
 
