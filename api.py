@@ -9,33 +9,6 @@ from sklearn.naive_bayes import MultinomialNB
 import joblib
 
 
-
-
-import os
-import subprocess
-from glob import glob
-
-from distutils.dep_util import newer_group
-from distutils.command.build_ext import build_ext as old_build_ext
-from distutils.errors import DistutilsFileError, DistutilsSetupError,\
-    DistutilsError
-from distutils.file_util import copy_file
-
-from numpy.distutils import log
-from numpy.distutils.exec_command import filepath_from_subprocess_output
-from numpy.distutils.system_info import combine_paths
-from numpy.distutils.misc_util import (
-    filter_sources, get_ext_source_files, get_numpy_include_dirs,
-    has_cxx_sources, has_f_sources, is_sequence
-)
-from numpy.distutils.command.config_compiler import show_fortran_compilers
-from numpy.distutils.ccompiler_opt import new_ccompiler_opt, CCompilerOpt
-
-
-
-
-
-
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
