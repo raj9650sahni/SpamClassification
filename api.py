@@ -1,4 +1,4 @@
-# Code Snippet taken from : https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776
+
 import flask
 import random
 from flask import request, jsonify
